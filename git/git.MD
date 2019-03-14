@@ -27,5 +27,31 @@ git config --global user.email "opendragonhuang@outlook.com"
 
 **版本库**：版本库又名为仓库，英文名为 repository，可以简单的理解为一个目录，这个目录里的所以文件都可以被 git 管理起来。每个文件的修改，删除，git 都能跟踪，以便时刻都可以追踪历史，或者在将来的某个时刻还可一将文件”还原“。当版本库创建成功后，版本库所创建的的目录下会多了一个 .git 目录，这个目录便是 git 来跟踪管理版本的。
 
+在合适的位置创建一个目录，创建目录成功后进入此目录，使用<code>git init</code>命令把此目录变成一个 git 版本库。
 
+```
+mkdir git_test
+cd git_test
+git init
+```
 
+### 2.3 向版本库添加文件
+
+在 git 中，用户使用的目录称为工作空间。.git 目录为版本库。版本库里面含义两部分，一部分是 Index/Stage，中文含义是暂存区，另一部是是 master 分支。一般情况下，用户在工作空间里新建了一个文件或是修改了文件，要被 git 管理，需要经过两个步骤。
+
+1. 把创建的文件或修改的文件添加到暂存区。
+2. 把暂存区里的所以文件提交到分支里去。
+
+假设用户在 工作区里新建了一个 README.MD 文件，添加到 git 中的过程如下：
+
+```
+git add README.MD
+git commit -m "add file README.MD"
+```
+
+- -m：后面跟着是本次提交的说明信息，建议每一次提交时，都要有说明信息。
+
+### 2.4 其他常用的 git 命令
+
+- <code>git diff</code> ：当文件被修改了，使用 <code>git init</code>查看修改了那些内容。
+- <code>git status</code>：获取当前版本库的状态（最常用的 git 命令）。
